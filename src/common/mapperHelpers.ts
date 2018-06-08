@@ -48,10 +48,9 @@ function createInstance<T>(type: { new (): T; }): T {
 }
 
 function copyObject<T>(copyFrom: T, copyTo: T): T {
-
     for (const key in copyFrom) {
-        if (copyFrom.hasOwnProperty(key)) {
-
+        // NOTE: https://github.com/hapijs/hapi/issues/3280
+        if (Object.prototype.hasOwnProperty.call(copyFrom, key)) {
             try {
                 copyTo[key] = copyFrom[key];
             } catch (err) {

@@ -1,21 +1,21 @@
 
-import parse from "co-body";
-
-import {PlaceView} from "api/models";
+import {map} from "common/mapperHelpers";
+import {PlaceSearchView} from "api/models";
 import {validatePlaceView} from "api/validators/placeValidator";
 import {searchPlaces} from "domain/services/placeService";
 import {fromViewModel} from "api/mappers/placeSearchMapper";
-
-const log = require("log")("places:routes:places");
+import {toViewModel} from "api/mappers/placeMapper";
 
 export async function getPlaces(ctx, next) {
 
-    const model: PlaceView = ctx.request.query;
-    validatePlaceView(model);
+    const viewModel = map(ctx.request.query, PlaceSearchView);
+    validatePlaceView(viewModel);
 
-    const mappedModel = fromViewModel(model);
+    const searchModel = fromViewModel(viewModel);
 
-    const places = await searchPlaces(mappedModel);
+    const places = await searchPlaces(searchModel);
 
-    ctx.body = places;
+    const viewModels = places.map(toViewModel);
+
+    ctx.body = viewModels;
 }

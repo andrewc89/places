@@ -1,18 +1,12 @@
 
-import {Address, Coordinates} from "domain/models";
+import {Coordinates, Platform} from "domain/models";
 
 export class Place {
     id: string;
-    provider: Provider;
+    provider: Platform;
     name: string;
     description: string;
     location: Coordinates;
     address: string;
     uri: string;
-}
-
-export enum Provider {
-    Google = "google",
-    Yelp = "yelp",
-    Foursquare = "foursquare",
 }

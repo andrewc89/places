@@ -3,6 +3,7 @@ import Router from "koa-router";
 
 import {ValidationError} from "domain/models/errors/validationError";
 import {getPlaces} from "./places";
+import { IntegrationError } from "domain/models/errors";
 
 const log = require("log")("places:routes");
 
@@ -23,7 +24,6 @@ async function errorHandlerMiddleware(ctx, next) {
             ctx.body = {
                 status: 400,
                 title: "Validation error(s) occurred.",
-                detail: err.message,
                 fields: err.fields,
             };
         } else {

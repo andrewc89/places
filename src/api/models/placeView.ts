@@ -1,7 +1,13 @@
 
 export class PlaceView {
-    lat: string;
-    long: string;
-    radius: number;
-    keyword: string;
+    id: string;
+    provider: string;
+    name: string;
+    description: string;
+    location: {
+        lat: string;
+        long: string;
+    };
+    address: string;
+    uri: string;
 }

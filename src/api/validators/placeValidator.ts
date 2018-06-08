@@ -3,10 +3,8 @@ import joi = require("joi");
 import isValidCoordinates = require("is-valid-coordinates");
 
 import {FieldValidation, ValidationError} from "domain/models/errors";
-import {PlaceView} from "api/models";
+import {PlaceSearchView} from "api/models";
 import {validateModel} from "common/modelValidation";
-
-const log = require("log")("places:validators:placeValidator");
 
 const schema = joi.object().keys({
     lat: joi.number().required().min(-90).max(90),
@@ -22,6 +20,6 @@ const errorMap = {
     keyword: "A valid keyword is required.",
 };
 
-export function validatePlaceView(model: PlaceView) {
-    return validateModel<PlaceView>(model, schema, errorMap);
+export function validatePlaceView(model: PlaceSearchView) {
+    return validateModel<PlaceSearchView>(model, schema, errorMap);
 }

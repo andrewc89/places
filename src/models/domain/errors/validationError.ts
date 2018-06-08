@@ -1,5 +1,5 @@
 
-import {CustomError} from "models/domain/errors/baseError";
+import {CustomError} from "models/domain/errors/customError";
 
 export class ValidationError extends CustomError {
 
@@ -11,7 +11,7 @@ export class ValidationError extends CustomError {
     }
 
     toString(): string {
-        return `${this.message}: ${JSON.stringify(this.fields)}`;
+        return `${this.message} ${JSON.stringify(this.fields)}`;
     }
 }
 

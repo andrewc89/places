@@ -10,13 +10,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "co-body": "^6.0.0",
     "is-valid-coordinates": "^1.0.0",
+    "joi": "^13.4.0",
     "koa": "^2.5.1",
     "koa-router": "^7.4.0",
+    "qs": "^6.5.2",
     "winston": "^3.0.0-rc6"
   },
   "devDependencies": {
+    "@types/joi": "^13.0.8",
     "@types/node": "^10.3.2",
     "ts-node": "^6.1.0",
     "tsconfig-paths": "^3.3.2",

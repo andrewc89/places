@@ -5,8 +5,6 @@ import {ValidationError} from "domain/models/errors/validationError";
 import {getPlaces} from "./places";
 import { IntegrationError } from "domain/models/errors";
 
-const log = require("log")("places:routes");
-
 export function initializeRoutes(app, router) {
 
     router.get("/api/places", getPlaces);

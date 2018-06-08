@@ -1,14 +1,11 @@
 
-import {GoogleApiStatus} from "integrations/models/google/responses/googleApiStatus";
+import {GoogleApiResponse} from "integrations/models/google/responses";
 import {GooglePlace} from "integrations/models/google";
 
-/* tslint:disable:variable-name */
-
-export class PlaceSearchResponse {
-    status: GoogleApiStatus;
-    error_message?: string;
+export class PlaceSearchResponse extends GoogleApiResponse<GooglePlace[]> {
     results: GooglePlace[];
 
-    // TODO: Type
-    html_attributions: any[];
+    payload(): GooglePlace[] {
+        return this.results;
+    }
 }

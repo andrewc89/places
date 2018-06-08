@@ -11,7 +11,8 @@
         "ordered-imports": false,
         "no-var-requires": false,
         "arrow-parens": false,
-        "one-line": false
+        "one-line": false,
+        "max-line-length": false
     },
     "rulesDirectory": []
 }

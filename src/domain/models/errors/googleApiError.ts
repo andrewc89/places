@@ -1,7 +1,7 @@
 
 import {CustomError} from "domain/models/errors/customError";
 
-export class GoogleError extends CustomError {
+export class GoogleApiError extends CustomError {
 
     constructor(message: string) {
         super(message);

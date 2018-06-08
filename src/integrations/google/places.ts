@@ -5,10 +5,12 @@ import axios from "axios";
 
 import * as DomainModels from "domain/models";
 import {PlaceSearch, GooglePlace} from "integrations/models/google";
+import {PlaceSearchResponse} from "integrations/models/google/responses";
 import {toGoogleSearchModel} from "integrations/mappers/placeSearchMapper";
 import {handleGoogleResponse} from "integrations/google/common";
 
 import config from "./config";
+import { fromGooglePlace } from "integrations/mappers/placeMapper";
 
 export async function searchPlaces(searchParams: DomainModels.PlaceSearch): Promise<DomainModels.Place[]> {
 
@@ -21,7 +23,9 @@ export async function searchPlaces(searchParams: DomainModels.PlaceSearch): Prom
 
     const response = await axios.get(url, {params, validateStatus: null});
 
-    const body = handleGoogleResponse<GooglePlace>(response, url);
+    const body = handleGoogleResponse<GooglePlace[], PlaceSearchResponse>(response, url, PlaceSearchResponse);
 
-    return [];
+    const mappedResults = body.map(fromGooglePlace);
+
+    return mappedResults;
 }

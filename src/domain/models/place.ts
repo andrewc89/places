@@ -7,7 +7,7 @@ export class Place {
     name: string;
     description: string;
     location: Coordinates;
-    address: Address;
+    address: string;
     uri: string;
 }
 

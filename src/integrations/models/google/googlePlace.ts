@@ -18,10 +18,12 @@ export class GooglePlace {
 
     photos: Photo[];
     place_id: string;
+    price_level: number;
+    rating: number;
     scope: string;
 
     // TODO: Type
-    alt_ids: any;
+    alt_ids?: any;
 
     reference: string;
     types: string[];

@@ -1,3 +1,3 @@
 
 export {ValidationError, FieldValidation} from "./validationError";
-export {GoogleError} from "./googleError";
+export {GoogleApiError} from "./googleApiError";

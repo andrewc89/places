@@ -1,6 +1,5 @@
 
 import joi = require("joi");
-import isValidCoordinates = require("is-valid-coordinates");
 
 import {FieldValidation, ValidationError} from "domain/models/errors";
 import {PlaceSearchView} from "api/models";

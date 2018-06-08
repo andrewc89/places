@@ -8,10 +8,20 @@ import {PlaceSearch, GooglePlace} from "integrations/models/google";
 import {PlaceSearchResponse} from "integrations/models/google/responses";
 import {toGoogleSearchModel} from "integrations/mappers/placeSearchMapper";
 import {handleGoogleResponse} from "integrations/google/common";
+import {fromGooglePlace} from "integrations/mappers/placeMapper";
 
 import config from "./config";
-import { fromGooglePlace } from "integrations/mappers/placeMapper";
 
+/**
+ * Query the Google API for places with the specified parameters.
+ *
+ * SEE: https://developers.google.com/places/web-service/search
+ *
+ * @param {DomainModels.PlaceSearch} searchParams - The search parameters with
+ * which to query the Google API.
+ * @returns {Promise<DomainModels.Place[]} - The places retrieved from the
+ * Google API.
+ */
 export async function searchPlaces(searchParams: DomainModels.PlaceSearch): Promise<DomainModels.Place[]> {
 
     const url = config.placeSearchUrl;

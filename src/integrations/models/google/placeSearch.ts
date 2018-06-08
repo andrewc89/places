@@ -1,7 +1,7 @@
 
 export class PlaceSearch {
 
-    // Must be specified as latitude/longitude (e.g. '33.8670522,151.1957362').
+    // Must be specified as `latitude,longitude` (e.g. '33.867052,151.195736').
     location: string;
 
     // Radius in meters.

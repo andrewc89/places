@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "*": ["src/*"]
+        },
+        "lib": ["es2017"],
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "allowSyntheticDefaultImports": true
+    }
+}

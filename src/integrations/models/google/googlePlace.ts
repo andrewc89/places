@@ -5,7 +5,7 @@ export class GooglePlace {
     geometry: {
         location: {
             lat: string;
-            long: string;
+            lng: string;
         };
     };
     icon: string;

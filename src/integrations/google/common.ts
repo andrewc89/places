@@ -6,6 +6,8 @@ import {Platform} from "domain/models";
 import {IntegrationError} from "domain/models/errors";
 import {GoogleApiResponse, GoogleApiStatus} from "integrations/models/google/responses";
 
+const log = require("log")("places");
+
 /**
  * Handle a response from the Google API. The two types provided are necessary
  * because the Google API returns some metadata along with the expected payload
@@ -27,6 +29,8 @@ import {GoogleApiResponse, GoogleApiStatus} from "integrations/models/google/res
 export function handleGoogleResponse<PayloadType, ResponseType extends GoogleApiResponse<PayloadType>>(response: AxiosResponse, url: string, responseType: { new (): ResponseType; }): PayloadType {
 
     const responseBody: ResponseType = map<ResponseType>(response.data, responseType);
+
+    log.debug("%j", responseBody);
 
     if (!responseBody) {
         throw new IntegrationError(`No response received from ${url}`, Platform.Google);

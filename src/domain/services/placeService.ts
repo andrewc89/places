@@ -1,5 +1,5 @@
 
-import {PlaceSearch, Place} from "models/domain";
+import {PlaceSearch, Place} from "domain/models";
 import * as GoogleIntegration from "integrations/google/places";
 
 export async function searchPlaces(searchParams: PlaceSearch): Promise<Place[]> {

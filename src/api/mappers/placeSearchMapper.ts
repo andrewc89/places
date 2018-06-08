@@ -1,6 +1,6 @@
 
-import * as DomainModels from "models/domain";
-import * as ViewModels from "models/view";
+import * as DomainModels from "domain/models";
+import * as ViewModels from "api/models";
 
 export function fromViewModel(viewModel: ViewModels.PlaceView): DomainModels.PlaceSearch {
     return {

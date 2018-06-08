@@ -1,7 +1,7 @@
 
 import Router from "koa-router";
 
-import {ValidationError} from "models/domain/errors/validationError";
+import {ValidationError} from "domain/models/errors/validationError";
 import {getPlaces} from "./places";
 
 const log = require("log")("places:routes");

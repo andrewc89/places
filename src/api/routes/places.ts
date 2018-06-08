@@ -1,10 +1,10 @@
 
 import parse from "co-body";
 
-import {PlaceView} from "models/view";
-import {validatePlaceView} from "validators/placeValidator";
-import { searchPlaces } from "integrations/google/places";
-import { fromViewModel } from "mappers/views/placeSearchMapper";
+import {PlaceView} from "api/models";
+import {validatePlaceView} from "api/validators/placeValidator";
+import {searchPlaces} from "domain/services/placeService";
+import {fromViewModel} from "api/mappers/placeSearchMapper";
 
 const log = require("log")("places:routes:places");
 

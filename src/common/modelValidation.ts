@@ -1,7 +1,7 @@
 
 import joi = require("joi");
 
-import {ValidationError, FieldValidation} from "models/domain/errors";
+import {ValidationError, FieldValidation} from "domain/models/errors";
 
 /**
  * Process a joi validation error object. Convert the joi validation errors to a

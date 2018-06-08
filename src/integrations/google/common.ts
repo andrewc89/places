@@ -1,5 +1,5 @@
 
-import {GoogleError} from "models/domain/errors";
+import {GoogleError} from "domain/models/errors";
 
 const log = require("log")("places:integrations:google");
 

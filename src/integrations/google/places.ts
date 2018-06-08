@@ -3,9 +3,9 @@
 
 import axios from "axios";
 
-import * as DomainModels from "models/domain";
-import {PlaceSearch, GooglePlace} from "models/integrations/google";
-import {toGoogleSearchModel} from "mappers/integrations/placeSearchMapper";
+import * as DomainModels from "domain/models";
+import {PlaceSearch, GooglePlace} from "integrations/models/google";
+import {toGoogleSearchModel} from "integrations/mappers/placeSearchMapper";
 import {handleGoogleResponse} from "integrations/google/common";
 
 import config from "./config";

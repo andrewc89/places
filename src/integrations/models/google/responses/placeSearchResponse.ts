@@ -1,6 +1,6 @@
 
-import {GoogleApiStatus} from "models/integrations/google/responses/googleApiStatus";
-import {GooglePlace} from "models/integrations/google";
+import {GoogleApiStatus} from "integrations/models/google/responses/googleApiStatus";
+import {GooglePlace} from "integrations/models/google";
 
 /* tslint:disable:variable-name */
 

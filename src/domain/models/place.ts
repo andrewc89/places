@@ -1,6 +1,5 @@
 
-import {Address} from "./address";
-import {Coordinates} from "models/domain";
+import {Address, Coordinates} from "domain/models";
 
 export class Place {
     id: string;

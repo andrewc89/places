@@ -1,4 +1,4 @@
-import {Coordinates} from "models/domain";
+import {Coordinates} from "domain/models";
 
 export class PlaceSearch {
     coordinates: Coordinates;

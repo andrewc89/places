@@ -1,5 +1,5 @@
 
-import {CustomError} from "models/domain/errors/customError";
+import {CustomError} from "domain/models/errors/customError";
 
 export class ValidationError extends CustomError {
 

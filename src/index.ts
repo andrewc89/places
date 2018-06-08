@@ -2,7 +2,7 @@
 import Koa = require("koa");
 import Router = require("koa-router");
 
-import {initializeRoutes} from "routes";
+import {initializeRoutes} from "api/routes";
 
 import config from "config";
 

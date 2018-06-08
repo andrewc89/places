@@ -2,9 +2,9 @@
 import joi = require("joi");
 import isValidCoordinates = require("is-valid-coordinates");
 
-import {FieldValidation, ValidationError} from "models/domain/errors";
-import {PlaceView} from "models/view";
-import { validateModel } from "validators/common";
+import {FieldValidation, ValidationError} from "domain/models/errors";
+import {PlaceView} from "api/models";
+import {validateModel} from "common/modelValidation";
 
 const log = require("log")("places:validators:placeValidator");
 
